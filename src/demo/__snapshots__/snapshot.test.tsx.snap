@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should take a snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <label
+      for="toggle"
+    >
+      Show Message
+    </label>
+    <input
+      id="toggle"
+      type="checkbox"
+    />
+  </div>
+</DocumentFragment>
+`;

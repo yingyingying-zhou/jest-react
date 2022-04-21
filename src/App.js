@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+// hidden-message.js
+import React from "react";
 
-function App() {
+// NOTE: React Testing Library works with React Hooks _and_ classes just as well
+// and your tests will be the same however you write your components.
+function HiddenMessage({ children }) {
+  const [showMessage, setShowMessage] = React.useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <label htmlFor="toggle">Show Message</label>
+      <input id="toggle" type="checkbox" onChange={(e) => setShowMessage(e.target.checked)} checked={showMessage} />
+      {showMessage ? children : null}
     </div>
   );
 }
 
-export default App;
+export default HiddenMessage;
